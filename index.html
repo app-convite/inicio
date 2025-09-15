@@ -4,6 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mounja de Pobre - VSL</title>
+  <meta name="description" content="Descubra o Mounja de Pobre - solução inovadora para transformar sua vida com simplicidade e resultado.">
+
+  <!-- Pixel UTMify -->
+  <script>
+    window.pixelId = "68bde393bbf3d1b48a522df4";
+    var a = document.createElement("script");
+    a.setAttribute("async", "");
+    a.setAttribute("defer", "");
+    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+    document.head.appendChild(a);
+  </script>
+
   <style>
     body {
       margin: 0;
@@ -18,18 +30,25 @@
     }
     h1 {
       margin-bottom: 20px;
+      text-align: center;
+      font-size: 1.8rem;
     }
     .vsl-wrapper {
       max-width: 420px;
       width: 100%;
       margin: 0 auto;
     }
+    vturb-smartplayer {
+      width: 100% !important;
+      height: auto !important;
+    }
     /* Popup de escassez */
     .popup {
       position: fixed;
       bottom: 20px;
       left: 20px;
-      background: rgba(0, 0, 0, 0.85);
+      background: linear-gradient(135deg, #0b513e, #043327);
+      border: 1px solid rgba(255,255,255,0.15);
       color: #fff;
       padding: 12px 16px;
       border-radius: 10px;
@@ -74,10 +93,17 @@
       "Rafaela de Recife",
       "Mateus de Goiânia"
     ];
+    const mensagens = [
+      "acabou de comprar o Mounja de Pobre!",
+      "garantiu sua vaga no programa!",
+      "entrou agora para a comunidade!",
+      "não perdeu a oportunidade e comprou!"
+    ];
 
     function mostrarPopup() {
       const nome = nomes[Math.floor(Math.random() * nomes.length)];
-      popup.textContent = nome + " acabou de comprar o Mounja de Pobre!";
+      const msg = mensagens[Math.floor(Math.random() * mensagens.length)];
+      popup.textContent = `${nome} ${msg}`;
       popup.style.display = 'block';
 
       setTimeout(() => {
@@ -85,8 +111,10 @@
       }, 5000);
     }
 
-    // Mostrar popup a cada 12 segundos
-    setInterval(mostrarPopup, 12000);
+    // Mostrar popup de forma mais natural (inicia após 8s)
+    setTimeout(() => {
+      setInterval(mostrarPopup, 12000);
+    }, 8000);
   </script>
 </body>
 </html>
